@@ -83,6 +83,11 @@ export function ItemDialog<T extends CardItemBase>({
                             size="icon"
                             className="size-8 cursor-pointer"
                             aria-label="Edit"
+                            onClick={() => {
+                                setSelected(item.selectItem ?? "")
+                                setInput(item?.name ?? "")
+                            }
+                            }
                         >
                             <PencilIcon className="h-4 w-4" />
                         </Button>
@@ -92,6 +97,12 @@ export function ItemDialog<T extends CardItemBase>({
                             size="icon"
                             className="size-8 cursor-pointer"
                             aria-label="Add"
+                            onClick={() => {
+                                setInput("")
+                                setSelected("")
+
+                            }}
+
                         >
                             <PlusIcon className="h-4 w-4" />
                         </Button>
@@ -100,7 +111,19 @@ export function ItemDialog<T extends CardItemBase>({
 
                 <DialogContent className="bg-[#fef9f2] sm:max-w-[425px]">
                     <DialogHeader>
-                        <DialogTitle>Edit {title}</DialogTitle>
+
+
+                        {!item ? (
+                            <div>
+                                <DialogTitle>Add new {title}</DialogTitle>
+
+                            </div>
+                        ) : (
+                            <div>
+                                <DialogTitle>Edit {title}</DialogTitle>
+
+                            </div>
+                        )}
                         <DialogDescription>
                             Make changes or add new {title} here. Click save when you&apos;re done.
                         </DialogDescription>
@@ -130,6 +153,7 @@ export function ItemDialog<T extends CardItemBase>({
                                     <Input
                                         required
                                         defaultValue={input}
+                                        value={input}
                                         onChange={(e) => setInput(e.target.value)}
                                         id="name"
                                         name="name"
@@ -156,6 +180,7 @@ export function ItemDialog<T extends CardItemBase>({
                                     <label>Please Select Option</label>
                                     <Select
                                         required
+                                        defaultValue={selected}
                                         value={selected}
                                         onValueChange={(value) => setSelected(value)}
                                     >

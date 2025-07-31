@@ -149,6 +149,7 @@ export const CustomCard = ({
                                 index={i}
                                 selectIndicator={selectIndicator}
                                 title={title}
+                                allergiesPresets={allergiesPresets}
 
                             />
                         ))

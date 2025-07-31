@@ -34,7 +34,7 @@ export function Dashboard() {
                     </CardContent>
                 </Card>
                 <CustomCard
-                    title={"Favorite Foods"}
+                    title={"Favorite Food"}
                     favorites={favorites}
                     setFavorites={setFavorites}
                     selectIndicator={favoriteCategoryIndicator}
@@ -44,7 +44,7 @@ export function Dashboard() {
 
 
                     <CustomCard
-                        title={"Disliked Foods"}
+                        title={"Disliked Food"}
                         dislikes={dislikes}
                         setDislikes={setDislikes}
                         selectIndicator={dislikesSeverityIndicator}
@@ -53,7 +53,7 @@ export function Dashboard() {
                     <CustomCard title={"Allergies"} allergies={allergies} setAllergies={setAllergies} allergiesPresets={allergiesPresets} selectIndicator={allergiesSeverityIndicator} />
 
                 </div>
-                <CustomCard title={"Special Notes"} notes={notes} setNotes={setNotes} isTextArea={true} />
+                <CustomCard title={"Special Note"} notes={notes} setNotes={setNotes} isTextArea={true} />
 
                 <Separator />
 

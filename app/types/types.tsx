@@ -47,6 +47,8 @@ export type CardItemProps<T extends CardItemBase> = {
     index: number;
     isTextArea?: boolean
     selectIndicator?: SelectOption[];
+    allergiesPresets?: string[];
+
 };
 
 export type AlertDialogProps<T extends CardItemBase> = {
